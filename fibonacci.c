@@ -22,7 +22,7 @@ int main() {
                             if (j % 2 !=0){
                                 printf(", %d", aux = aux * (-1));
                             }else{
-                                    printf(", %d", aux);
+                                printf(", %d", aux);
                             }
                         }
                     }
