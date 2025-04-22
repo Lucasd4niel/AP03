@@ -1,31 +1,36 @@
 #include <stdio.h>
 
 int main() {
-    int t, a, b, c, n, i, teste;
-    
-    scanf("%d", &t); 
+    int t, i, j, num, prim, seg, aux;
 
-    for(teste = 0; teste < t; teste++) {
-        scanf("%d", &n); 
-        a = 0;
-        b = 1;
-        for (i = 0; i < n; i++) {
-            if (i == 0) {
-                printf("%d", a);
-            } else if (i == 1) {
-                printf(", %d", b);
-            } else {
-                c = a + b;
-                a = b;
-                b = c;
-                if (i % 2 != 0)
-                    c = -c;
-
-                printf(", %d", c);
+    scanf("%d", &t);
+    if(t >= 1 && t <= 20){
+        for(i = 1; i <= t; i++){
+            scanf("%d", &num);
+            prim = 0;
+            seg = 1;
+            if(num >= 1 && num <= 47){
+                if(num == 1){
+                    printf("%d", prim);
+                }else{
+                    if(num > 1){
+                        printf("%d, %d",prim ,seg);
+                        for(j = 3; j <= num; j++){
+                            aux =  prim + seg;
+                            prim = seg;
+                            seg = aux;
+                            if (j % 2 !=0){
+                                printf(", %d", aux = aux * (-1));
+                            }else{
+                                    printf(", %d", aux);
+                            }
+                        }
+                    }
+                }
+                printf("\n");
             }
         }
-        printf("\n");
-    }
 
+    }
     return 0;
 }
