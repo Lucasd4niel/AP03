@@ -39,4 +39,5 @@ int main(void){
     printf("Total Investido: %.2f\n", t_invest);
     printf("Rendimento Total: %.2f\n", t_rendimento);
     return 0;
+    /**/
 }
