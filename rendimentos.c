@@ -2,7 +2,7 @@
 
 int main(void){
     int mes, acompanhamento, i;
-    double aporte, saldo, t_invest, t_rendimento, taxa, r;
+    float aporte, saldo, t_invest, t_rendimento, r;
     saldo = 0.0;
     t_invest = 0.0;
     t_rendimento = 0.0;
@@ -13,18 +13,21 @@ int main(void){
                 mes = mes - 12;
             }
             if (saldo > 0){
-                r = saldo * 0.005;
-                saldo = saldo + r;
-                t_rendimento = t_rendimento + r;
                 if (mes == 1){
-                    r =  saldo * 0.01;
-                    saldo = saldo * 1.01;
+                    r =  saldo * 0.015;
+                    saldo = saldo + r;
                     t_rendimento = t_rendimento + r;
+                }else{
+                    if(mes == 8){
+                        r = saldo * 0.003;
+                        saldo = saldo + r;
+                        t_rendimento =  t_rendimento + r;
+                    }else{
+                        r = saldo * 0.005;
+                        saldo = saldo + r;
+                        t_rendimento = t_rendimento + r;
+                    }   
                 }
-                if(mes == 8){
-                    taxa = saldo * 0.002;
-                    saldo = saldo - taxa;
-                }    
             }
             scanf("%f", &aporte);
             saldo = saldo + aporte;
