@@ -2,7 +2,7 @@
 
 int main(void){
     int mes, acompanhamento, i;
-    float aporte, saldo, t_invest, t_rendimento, taxa, r;
+    float aporte, saldo, t_invest, t_rendimento, r;
     saldo = 0.0;
     t_invest = 0.0;
     t_rendimento = 0.0;
@@ -42,5 +42,4 @@ int main(void){
     printf("Total Investido: %.2f\n", t_invest);
     printf("Rendimento Total: %.2f\n", t_rendimento);
     return 0;
-    /**/
 }
