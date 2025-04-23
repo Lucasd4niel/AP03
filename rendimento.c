@@ -6,27 +6,31 @@ int main(void){
     saldo = 0.0;
     t_invest = 0.0;
     t_rendimento = 0.0;
+
     scanf("%d %d", &mes, &acompanhamento);
-    if (mes >=1 && mes <=12 && acompanhamento >0){
+    
+    if (mes >= 1 && mes <= 12 && acompanhamento > 0){
         for(i = 1; i <= acompanhamento; i++){
             if (mes > 12){
                 mes = mes - 12;
             }
             if (saldo > 0){
-                if (mes == 1){
+                switch (mes){
+                case 1:
                     r =  saldo * 0.015;
                     saldo = saldo + r;
                     t_rendimento = t_rendimento + r;
-                }else{
-                    if(mes == 8){
-                        r = saldo * 0.003;
-                        saldo = saldo + r;
-                        t_rendimento =  t_rendimento + r;
-                    }else{
-                        r = saldo * 0.005;
-                        saldo = saldo + r;
-                        t_rendimento = t_rendimento + r;
-                    }   
+                    break;
+                case 8:
+                    r = saldo * 0.003;
+                    saldo = saldo + r;
+                    t_rendimento =  t_rendimento + r;
+                    break;
+                default:
+                    r = saldo * 0.005;
+                    saldo = saldo + r;
+                    t_rendimento = t_rendimento + r;
+                    break;
                 }
             }
             scanf("%f", &aporte);
@@ -34,7 +38,7 @@ int main(void){
             if (aporte > 0){
                 t_invest =  t_invest + aporte;
             }
-            mes++;
+            mes = mes + 1;
         }
     }
         
